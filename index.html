@@ -1,0 +1,489 @@
+<!-- 
+  Construa a página home de catálogos do NETFLIX utilizando tudo que foi aprendido no módulo de HTML até o presente momento. Ao clicar no item do catálogo deve abrir uma descrição sobre a série/filme, ou em nova aba ou modal. Não precisa criar cada página de cada série/filme, pode fazer uma genérica, mas que mostre como seria abrir a descrição da série/filme.
+  Não se preocupe com as interações Javascript, essa parte não precisa ser feita.
+  Exemplo: Ao clicar em uma série trocar o fundo principal etc. 
+-->
+
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <script src="https://kit.fontawesome.com/ba8e17309a.js" crossorigin="anonymous"></script>
+  <link href="./assets/libs/animate/animate.min.css" rel="stylesheet">
+  <link href="./assets/libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <link href="./assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <!--   Barra de Navegação -->
+  <nav class="navbar fixed-top navbar-expand-lg transparent" id="nav1">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="./assets/img/netflix.png" alt="logo" class="logo"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" style="background-color:white"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#" style="color:white;">Início</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Séries</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Filmes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Bombando</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Minha lista</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Navegar por idiomas</a>
+          </li>
+          <div class="separador"></div>
+          <!--           separar por divs -->
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Infantil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa-solid fa-bell"></i></a>
+          </li>
+          <!--           <li class="nav-item">
+            <a class="nav-link usuario nav-item dropdown" href="#"><img src="./assets/img/usuario-netflix.JPG"
+                alt="usuario"></a>
+          </li> -->
+          <li class="nav-item dropdown">
+            <a class="nav-link usuario dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <img src="./assets/img/usuario-netflix.JPG" alt="usuario">
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item usuario">
+                  <img src="./assets/img/usuario-netflix2.JPG" alt="usuario"><span>Outro usuário</span>
+                </a>
+              </li>
+              <li><a class="dropdown-item usuario">
+                  <img src="./assets/img/infantil.JPG" alt="usuario"><span>Infantil</span>
+                </a>
+              </li>
+              <li><a class="dropdown-item" href="#"> <i class="fa-solid fa-pen usuario"></i><span>Gerenciar
+                    perfis</span></a>
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#"><i class="fa-solid fa-user usuario"></i><span>Conta</span></a></li>
+              <li><a class="dropdown-item" href="#"><i class="fa-solid fa-circle-question usuario"></i><span>Central de
+                    ajuda</span></a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item sair" href="#"><span>Sair da Netflix</span></a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!--   Banner -->
+  <div class="banner">
+    <div class="informacao container">
+      <span class="logo-simbolo"><img src="./assets/img/netflix-logo.png" alt="netflix-logo"><span class="tipo">F I L M
+          E</span></span>
+      <h1>1917</h1>
+
+      <span class="sinopse">
+        <div class="top-10">
+          <img src="./assets/img/vetor-top-10.png" alt="top-10-imagem" class="top-10-imagem">
+          <span class="top-10-texto">Top 3 em filmes hoje</span>
+        </div>
+        Na Primeira Guerra Mundial, dois soldados tentam cruzar território inimigo para entregar uma
+        mensagem que
+        pode salvar centenas de soldados, inclusive o irmão de um deles
+      </span>
+      <div class="btn-opcoes">
+        <button type="button" class="btn btn-light"><i class="fa-solid fa-play"></i> Assistir</button>
+        <button type="button" class="btn btn-secondary"><span class="circular-texto">i</span> Mais informações</button>
+      </div>
+    </div>
+    <!-- Vídeo Trailer Filme -->
+    <div class="sumir-video">
+      <iframe width=100% height=100% src="https://www.youtube.com/embed/YqNYrYUiMfg?autoplay=1&mute=1"
+        title="1917 - Official Trailer [HD]" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+
+    <!--     Carrossel -->
+    <div class="carrossel-completo">
+      <span>
+        <h2 class="carrossel-titulo container">Principais escolhas para Usuário</h2>
+      </span>
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+              <img src="./assets/img/sandman.jpg" alt="sandman" style="width:200px; height: 100px;">
+            </button>
+            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+              <img src="./assets/img/woodstock.jpg" alt="woodstock" style="width:200px; height: 100px;">
+            </button>
+            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+              <img src="./assets/img/better-call-saul.jpg" alt="better-call-saul" style="width:200px; height: 100px;">
+            </button>
+            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal4">
+              <img src="./assets/img/clube-da-luta.webp" alt="clube-da-luta" style="width:200px; height: 100px;">
+            </button>
+            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal5">
+              <img src="./assets/img/ano-um.webp" alt="ano-um" style="width:200px; height: 100px;">
+            </button>
+          </div>
+          <div class="carousel-item">
+            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal6">
+              <img src="./assets/img/breaking-bad.webp" alt="breaking-bad" style="width:200px; height: 100px;">
+            </button>
+            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal7">
+              <img src="./assets/img/forrest-gump.webp" alt="forrest-gump" style="width:200px; height: 100px;">
+            </button>
+            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal8">
+              <img src="./assets/img/seinfeld.webp" alt="seinfeld" style="width:200px; height: 100px;">
+            </button>
+            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal9">
+              <img src="./assets/img/rocketman.webp" alt="rocketman" style="width:200px; height: 100px;">
+            </button>
+            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal10">
+              <img src="./assets/img/one-punch-man.webp" alt="one-punch-man" style="width:200px; height: 100px;">
+            </button>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    <div class="esconder-youtube"></div>
+  </div>
+  <div style="height: 200vh; background-color: #141414;" id="div-background">
+    <!-- Button trigger modal -->
+    <!--     <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"></button> -->
+
+    <!-- Modal Sandman -->
+    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#">
+            <div class="modal-header">
+            </div>
+          </a>
+          <div class="modal-body">
+            <div class="sinopse-modal">Após anos aprisionado, Morpheus, o Rei dos Sonhos, embarca em uma jornada entre
+              mundos para recuperar o que lhe foi roubado e restaurar seu poder.</div>
+            <div class="tags-modal">
+              <span>
+                <cor style="color: #777">Elenco:</cor> Tom Sturridge, Boyd Holbrook, Patton Oswalt, mais
+              </span><br>
+              <span>
+                <cor style="color: #777">Gêneros:</cor> Séries de fantasia, Séries dramáticas, Séries dos EUA
+              </span><br>
+              <span>
+                <cor style="color: #777">Cenas e momentos:</cor> Sombrios
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--     Modal Woodstock -->
+    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#">
+            <div class="modal-header">
+            </div>
+          </a>
+          <div class="modal-body">
+            <div class="sinopse-modal">O festival de Woodstock de 1969 prometia paz e música. Mas na edição de 1999
+              foram dias de tumulto, violência e danos reais. Por que tudo deu tão errado?</div>
+            <div class="tags-modal">
+              <span>
+                <cor style="color: #777">Gêneros:</cor> Documentários socioculturais, Séries documentais, Séries dos EUA
+              </span><br>
+              <span>
+                <cor style="color: #777">Cenas e momentos:</cor> Investigativos
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--     Modal Better Call Saul -->
+    <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#">
+            <div class="modal-header">
+            </div>
+          </a>
+          <div class="modal-body">
+            <div class="sinopse-modal">Antes de se transformar no infame Saul Goodman, o advogado de Breaking Bad era
+              mais inocente, mas não era santo</div>
+            <div class="tags-modal">
+              <span>
+                <cor style="color: #777">Elenco:</cor> Bob Odenkirk, Jonathan Banks, Rhea Seehorn, mais
+              </span><br>
+              <span>
+                <cor style="color: #777">Gêneros:</cor> Séries policiais, Séries dramáticas, Séries dos EUA
+              </span><br>
+              <span>
+                <cor style="color: #777">Cenas e momentos:</cor> Excêntricos, Realistas
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--     Modal Clube da Luta -->
+    <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#">
+            <div class="modal-header">
+            </div>
+          </a>
+          <div class="modal-body">
+            <div class="sinopse-modal">Desiludido com o mundo corporativo, um homem faz um amigo misterioso e cria um
+              clube secreto - o lugar perfeito para lidar com os sentimentos reprimidos.</div>
+            <div class="tags-modal">
+              <span>
+                <cor style="color: #777">Elenco:</cor> Brad Pitt, Edward Norton, Helena Bonham Carter, mais
+              </span><br>
+              <span>
+                <cor style="color: #777">Gêneros:</cor> Filmes sobre questões sociais, filmes baseados em livros, filmes
+                noir
+              </span><br>
+              <span>
+                <cor style="color: #777">Cenas e momentos:</cor> Sombrios
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--     Modal Ano Um -->
+    <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#">
+            <div class="modal-header">
+            </div>
+          </a>
+          <div class="modal-body">
+            <div class="sinopse-modal">Expulso de sua vila após comer a fruta proibida, um Neandertal atrapalhado e seu
+              fiel escudeiro embarcam em uma jornada bíblica.</div>
+            <div class="tags-modal">
+              <span>
+                <cor style="color: #777">Elenco:</cor> Jack Black, Michael Cera, Oliver Platt, mais
+              </span><br>
+              <span>
+                <cor style="color: #777">Gêneros:</cor> Ação e aventura, Comédia, Comérias de fim de noite
+                noir
+              </span><br>
+              <span>
+                <cor style="color: #777">Cenas e momentos:</cor> Apimentados
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--     Modal Breaking Bad -->
+    <div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#">
+            <div class="modal-header">
+            </div>
+          </a>
+          <div class="modal-body">
+            <div class="sinopse-modal">Um professor de química do ensino médio começa a vender drogas para sustentar sua
+              família.</div>
+            <div class="tags-modal">
+              <span>
+                <cor style="color: #777">Elenco:</cor> Bryan Cranston, Aaron Paul, Anna Gunn, mais
+              </span><br>
+              <span>
+                <cor style="color: #777">Gêneros:</cor> Séries policiais, Suspense para TV, Séries dramáticas
+                noir
+              </span><br>
+              <span>
+                <cor style="color: #777">Cenas e momentos:</cor> Violentos, Realistas, Sombrios
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--     Modal Breaking Bad -->
+    <div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#">
+            <div class="modal-header">
+            </div>
+          </a>
+          <div class="modal-body">
+            <div class="sinopse-modal">Um professor de química do ensino médio começa a vender drogas para sustentar sua
+              família.</div>
+            <div class="tags-modal">
+              <span>
+                <cor style="color: #777">Elenco:</cor> Bryan Cranston, Aaron Paul, Anna Gunn, mais
+              </span><br>
+              <span>
+                <cor style="color: #777">Gêneros:</cor> Séries policiais, Suspense para TV, Séries dramáticas
+                noir
+              </span><br>
+              <span>
+                <cor style="color: #777">Cenas e momentos:</cor> Violentos, Realistas, Sombrios
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--     Modal Forrest Gump -->
+    <div class="modal fade" id="exampleModal7" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#">
+            <div class="modal-header">
+            </div>
+          </a>
+          <div class="modal-body">
+            <div class="sinopse-modal">Um homem gentil e simpático presencia os principais eventos das décadas de 1960 e
+              1970 e, graças a seu otimismo inabalável, inspira todas as pessoas ao seu redor.</div>
+            <div class="tags-modal">
+              <span>
+                <cor style="color: #777">Elenco:</cor> Tom Hanks, Robin Wright, Gary Sinise, mais
+              </span><br>
+              <span>
+                <cor style="color: #777">Gêneros:</cor> Comédias românticas, Filmes baseados em livros, Filmes clássicos
+              </span><br>
+              <span>
+                <cor style="color: #777">Cenas e momentos:</cor> Sentimentais, Alto-astral, Comoventes
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--     Modal Seinfeld -->
+    <div class="modal fade" id="exampleModal8" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#">
+            <div class="modal-header">
+            </div>
+          </a>
+          <div class="modal-body">
+            <div class="sinopse-modal">Uma mulher que Jerry conheceu em Michigan chega a Nova York e liga para ele. Será
+              que ela está a fim dele?</div>
+            <div class="tags-modal">
+              <span>
+                <cor style="color: #777">Elenco:</cor> Jerry Seinfeld, Julia Louis-Dreyfus, Jason Alexander, mais
+              </span><br>
+              <span>
+                <cor style="color: #777">Gêneros:</cor> Sitcoms, Comédias para a TV, Séries dos EUA
+              </span><br>
+              <span>
+                <cor style="color: #777">Cenas e momentos:</cor> Espirituosos, Irreverentes
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--     Modal Rocketman -->
+    <div class="modal fade" id="exampleModal9" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#">
+            <div class="modal-header">
+            </div>
+          </a>
+          <div class="modal-body">
+            <div class="sinopse-modal">Em reabilitação, Elton John relembra suas origens humildes, as músicas atemporais
+              e os momentos de inspiração e excesso. Baseado em sua verdadeira história</div>
+            <div class="tags-modal">
+              <span>
+                <cor style="color: #777">Elenco:</cor> Taron Egerton, Jamie Bell, Richard Madden, mais
+              </span><br>
+              <span>
+                <cor style="color: #777">Gêneros:</cor> Aqui tem muita música, Filmes LGBTQ, Filmes baseados na vida
+                real
+              </span><br>
+              <span>
+                <cor style="color: #777">Cenas e momentos:</cor> Comoventes
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--     Modal One Punch Man -->
+    <div class="modal fade" id="exampleModal10" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#">
+            <div class="modal-header">
+            </div>
+          </a>
+          <div class="modal-body">
+            <div class="sinopse-modal">Saitama está decidido a ser um super-herói. Após anos de treinamento, ele está
+              forte o suficiente para proteger a humanidade</div>
+            <div class="tags-modal">
+              <span>
+                <cor style="color: #777">Elenco:</cor> Makoto Furukawa, Kaito Ishikawa, Yuki Kaji, mais
+              </span><br>
+              <span>
+                <cor style="color: #777">Gêneros:</cor> Japonês, Séries baseadas em mangá, Animes Seinen
+              </span><br>
+              <span>
+                <cor style="color: #777">Cenas e momentos:</cor> Humor seco, Empolgantes
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./assets/libs/bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
