@@ -237,6 +237,10 @@ h1 {
   border: none;
 }
 
+.modal-header img{
+  width: 100%;
+}
+
 .modal-body {
   display: flex;
   flex-direction: row;
@@ -292,7 +296,35 @@ h1 {
   color: white !important;
 }
 
+#anterior{
+  display: block;
+}
 
+#placeholder{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.abertura{
+  position:absolute;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cumprir-rubrica{
+  width: 200px;
+  height: 100px;
+  background-color: green;
+  font-size: 60px;
+  font-weight: bold;
+  text-align: center;
+}
 
 
 
@@ -302,10 +334,10 @@ h1 {
 
     /* Large Tablet Landscape */
     @media screen and (max-width: 1024px){
-      .carousel-control-prev {
+      #anterior {
         display: none;
       }
-      .carousel-control-next {
+      #proximo {
         display: none;
       }
       .carrossel-completo {
@@ -320,6 +352,7 @@ h1 {
         padding: 0;
         position: absolute;
       }
+      
     }
 
     /* Phone and Small tablets - Landscape */
